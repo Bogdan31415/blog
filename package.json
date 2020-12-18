@@ -1,0 +1,44 @@
+{
+  "name": "back-end",
+  "version": "1.0.0",
+  "description": "fullstack node js angular",
+  "main": "index.js",
+  "engines": {
+    "node": "14.4.0",
+    "npm": "6.14.5"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "server": "nodemon index",
+    "client-install": "npm install --prefix client",
+    "client": "npm run start --prefix angular-blog",
+    "dev": "concurrently \"npm run server \" \"npm run client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm run client-install && npm run build --prefix client"
+  },
+  "keywords": [
+    "express",
+    "angular"
+  ],
+  "author": "Bohdan Kisil",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/preset-env": "^7.11.0",
+    "bcrypt": "^5.0.0",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "moment": "^2.27.0",
+    "mongoose": "^5.9.27",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.2",
+    "npm": "^6.14.7",
+    "passport": "^0.4.1",
+    "passport-jwt": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/materialize-css": "^1.0.8",
+    "concurrently": "^5.2.0",
+    "nodemon": "^2.0.4"
+  }
+}

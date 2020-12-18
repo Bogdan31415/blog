@@ -1,0 +1,21 @@
+<mat-toolbar color="primary" class="mat-elevation-z10">
+  <span><mat-icon>extension</mat-icon>Angular Blog</span>
+  <div class="spacer"> </div>
+  <ul>
+    <li routerLinkActive="active">
+      <a mat-button routerLink="/user">Home</a>
+    </li>
+    <li routerLinkActive="active">
+      <a mat-button [routerLink]="['/user', 'dashboard']" >Dashboard</a>
+    </li>
+    <li routerLinkActive="active">
+      <a mat-button [routerLink]="['/user', 'create']">New Post</a>
+    </li>
+    <li>
+      <a mat-button href="#" (click)="logout($event)">Logout</a>
+    </li>
+  </ul>
+</mat-toolbar>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>

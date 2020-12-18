@@ -1,0 +1,18 @@
+<mat-toolbar color="primary" class="mat-elevation-z10">
+  <span><mat-icon>extension</mat-icon>Angular Blog</span>
+  <div class="spacer"> </div>
+  <ul>
+    <li>
+      <a mat-button routerLink="/">Home</a>
+    </li>
+    <li routerLinkActive="active">
+      <a mat-button [routerLink]="['/', 'register']" >Sign Up</a>
+    </li>
+    <li routerLinkActive="active">
+      <a mat-button [routerLink]="['/', 'login']" >Sign In</a>
+    </li>
+  </ul>
+</mat-toolbar>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>

@@ -1,0 +1,27 @@
+.example-container{
+  text-align: center;
+}
+
+.form-container{
+  width: 500px;
+  margin: 200px auto 0;
+}
+
+.form-field{
+  display: block;
+}
+::ng-deep {
+  .mat-form-field-appearance-outline .mat-form-field-outline {
+    color: #c2185b;
+  }
+  mat-form-field {
+    .mat-hint, input, ::placeholder, .mat-form-field-label {
+      color: #c2185b;
+    }
+  }
+}
+.mat-raised-button:disabled{
+  color: white;
+  background: #e5adc3;
+}
+

@@ -1,0 +1,40 @@
+<div *ngIf="post$ | async as post else loading">
+<mat-card class="card">
+  <img mat-card-md-image src="{{post.imageSrc}}">
+  <mat-card-header>
+    <mat-card-title>{{ post.title }}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <p>{{post.text}}</p>
+  </mat-card-content>
+  <mat-card-footer>
+    <small>Author :{{ post.author }}</small>
+  </mat-card-footer>
+</mat-card>
+</div>
+<div *ngIf="commants$ | async as comments; else loading">
+  <div  *ngIf="comments.length !==0; else empty">
+    <app-comment
+      *ngFor="let comment of comments"
+      [comment]="comment"
+    ></app-comment>
+  </div>
+</div>
+<form [formGroup]="form" (ngSubmit)="submit()" class="example-form">
+  <mat-form-field class="example-full-width">
+    <mat-label>Leave a comment</mat-label>
+    <textarea  matInput formControlName="text" type="text"></textarea>
+    <mat-error *ngIf="form.controls.text.touched && form.controls.text.invalid">
+      <span *ngIf="form.controls.text.errors.required">This field is mandatory.</span>
+    </mat-error>
+  </mat-form-field>
+  <button mat-raised-button color="primary">Submit</button>
+</form>
+<ng-template #loading>
+  <mat-spinner class="loader"></mat-spinner>
+</ng-template>
+<ng-template #empty >
+  <div>
+    No Comments
+  </div>
+</ng-template>
