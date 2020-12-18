@@ -3,3 +3,5 @@ node_modules
 config/keys.dev.js
 client/etc
 angular-blog/node_modules
+.DS_Store
+
